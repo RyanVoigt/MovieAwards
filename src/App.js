@@ -1,5 +1,5 @@
  /* eslint-disable */ 
- <meta name="viewport" content="width=1024"></meta>
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
@@ -248,6 +248,7 @@ const handleCardUpdate = (id) => {
   
   return (
     <div className="App">
+      <meta name="viewport" content="width=1024"></meta>
       {showIntro && <Intro closeIntro = {closeIntro}/>}
       <header>
         <h1>Movie Awards</h1>
