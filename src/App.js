@@ -183,7 +183,7 @@ const UpdateMovieList = (imgID)=>{
   }
 // manages the search button
 const search = (e) => {
-  if (e.key === "Enter"){
+  if (e.key === "Enter" || e.keyCode === 13){
     axios(apiurl + "&s=" + state.s).then(({data}) => {
       let results = data.Search;
         setState(prevState =>{
