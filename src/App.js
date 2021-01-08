@@ -1,4 +1,5 @@
  /* eslint-disable */ 
+ <meta name="viewport" content="width=1024"></meta>
 import React, { useState } from 'react';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
