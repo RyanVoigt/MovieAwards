@@ -87,7 +87,7 @@ function App() {
     listCards: [],
   });
 
-  const apiurl = "http://www.omdbapi.com/?apikey=9e9bc420";
+  const apiurl = "https://www.omdbapi.com/?apikey=9e9bc420";
 // Used to manage cache data checks to see if you've ranked movies in the past and also the popup checkbox
   if(firstTrigger == 0){
     if(localStorage.getItem("checked") != null){
