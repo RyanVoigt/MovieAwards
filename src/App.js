@@ -7,6 +7,7 @@ import Results from './components/Results';
 import Popup from './components/Popup';
 import Submitted from './components/Submitted'
 import Intro from './components/Intro'
+import Banner from 'react-js-banner';
 
 import grinchaudio from './Assets/I_Nominate_The_Grinch.mp3'
 import ironaudio from './Assets/built_in_a_cave.mp3'
@@ -17,6 +18,7 @@ import { Container } from './components/CardContainer'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
 // Variables for tracking movie list a positioning state
+let showBanner = false;
 let reloadedWith5 = false;
 let showIntro = true;
 let moviesLeftCount = 5;
@@ -104,6 +106,7 @@ function App() {
         reloadedWith5 = false;
 
       if(moviesLeftCount == 0){
+        showBanner = true;
         reloadedWith5 = true;
         state.showSubmitted = true;
         state.fiveItems = true;
@@ -164,7 +167,8 @@ const UpdateMovieList = (imgID)=>{
         item[i].text = imgID;
         boolitem[i] = true;
         if(i == 4){
-          fiveItems = true
+          fiveItems = true;
+          showBanner = true;
         }
         i = 6;
         localStorage.setItem("boolitem", JSON.stringify(boolitem));
@@ -172,6 +176,7 @@ const UpdateMovieList = (imgID)=>{
         moviesLeftCount = moviesLeft(item);
         if(moviesLeftCount == 0){
           fiveItems = true;
+          showBanner = true;
         }
         localStorage.setItem("boolitem", JSON.stringify(boolitem));
         setState(prevState =>{
@@ -230,6 +235,8 @@ const handleCardUpdate = (id) => {
   boolitem[id-1] = false;
   let fiveItems = false;
   reloadedWith5 = false;
+  showBanner = false;
+  console.log("SHOWBANNERFALSE");
   moviesLeftCount = moviesLeft(item);
   localStorage.setItem("boolitem", JSON.stringify(boolitem));
   localStorage.setItem("item", JSON.stringify(item));
@@ -248,6 +255,11 @@ const handleCardUpdate = (id) => {
   
   return (
     <div className="App">
+      <Banner showBanner={showBanner}
+      title="You've Added 5 Movies, Press Submit When Ready" 
+      css={{ color: "#FFF", backgroundColor: "rgba(0, 0, 0, 0.2)", fontSize: 20, position: "absolute", width: "87%", padding: "8px 0px 8px 0px"}} 
+      //visibleTime={3000}
+    />
       <meta name="viewport" content="width=1024"></meta>
       {showIntro && <Intro closeIntro = {closeIntro}/>}
       <header>
