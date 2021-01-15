@@ -11,7 +11,7 @@ function Intro ({clicked, closeIntro}){
         <section id ="introPopup">
             <div id = "howToUse">How To Use</div>
             <div id = "sidebarwrapper1">
-                <img id ="sidebargif" src = {sidebar}></img>
+                
                 <div id = "titlepop">
                     <div id= "titleside">SideBar</div>
                     <div id = "titlesidesmall"> The sidebar allows you to see the movies you want to nominate so you can:</div>
