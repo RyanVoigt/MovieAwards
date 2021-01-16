@@ -11,11 +11,11 @@ function Intro ({clicked, closeIntro}){
         <section id ="introPopup">
             <div id = "howToUse">How To Use</div>
             <div id = "sidebarwrapper1">
-                
+                <img id ="sidebargif" src = {sidebar}></img>
                 <div id = "titlepop">
                     <div id= "titleside">SideBar</div>
                     <div id = "titlesidesmall"> The sidebar allows you to see the movies you want to nominate so you can:</div>
-                    <div id = "titlesidesmall3">Drag to rearrange movie rankings</div>
+                    <div id = "titlesidesmall">• Drag to rearrange movie rankings</div>
                     <div id = "titlesidesmall">• Remove movies from your selection </div>
                     <div id = "titlesidesmall">• Once 5 movies are selected the submit button shows</div>
                     <div id = "titlesidesmall">• It will store your movies selection on refresh</div>
