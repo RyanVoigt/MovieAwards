@@ -1,6 +1,6 @@
  /* eslint-disable */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import Results from './components/Results';
@@ -8,6 +8,7 @@ import Popup from './components/Popup';
 import Submitted from './components/Submitted'
 import Intro from './components/Intro'
 import Banner from 'react-js-banner';
+import ReactGa from 'react-ga';
 
 import grinchaudio from './Assets/I_Nominate_The_Grinch.mp3'
 import ironaudio from './Assets/built_in_a_cave.mp3'
@@ -78,6 +79,10 @@ function containsTwice(a, obj) {
   return false;
 }
 function App() {
+  useEffect(() => {
+    ReactGa.initialize('UA-148169053-4');
+    ReactGa.pageview('/');
+  })
   // Page States
   const [state, setState] = useState({
     s: "",
@@ -263,14 +268,6 @@ const handleCardUpdate = (id) => {
       <meta name="viewport" content="width=1024"></meta>
       {showIntro && <Intro closeIntro = {closeIntro}/>}
       <header>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-GP4J3CEVDK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GP4J3CEVDK');
-</script>
         <h1>Movie Awards</h1>
       </header>
       <div className="sidenav">
