@@ -1,4 +1,4 @@
- /* eslint-disable */ 
+ /* eslint-disable */
 
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -59,7 +59,7 @@ function moviesLeft(a){
     if (a[i].text != '') {
       count = count +1;
     }
-  } 
+  }
   return (5 - count);
 }
 //Stops you from adding a the same movie to your list
@@ -159,7 +159,7 @@ const UpdateMovieList = (imgID)=>{
         let sound = new Audio(lotraudio)
         sound.play();
       }
-       
+
     for(var i = 0; i<5; i++){
       let fiveItems = false
       localStorage.setItem("boolitem", JSON.stringify(boolitem));
@@ -252,17 +252,25 @@ const handleCardUpdate = (id) => {
     });
     console.log(state.s)
   }
-  
+
   return (
     <div className="App">
       <Banner showBanner={showBanner}
-      title="You've Added 5 Movies, Press Submit When Ready" 
-      css={{ color: "#FFF", backgroundColor: "rgba(0, 0, 0, 0.2)", fontSize: 20, position: "absolute", width: "87%", padding: "8px 0px 8px 0px"}} 
+      title="You've Added 5 Movies, Press Submit When Ready"
+      css={{ color: "#FFF", backgroundColor: "rgba(0, 0, 0, 0.2)", fontSize: 20, position: "absolute", width: "87%", padding: "8px 0px 8px 0px"}}
       //visibleTime={3000}
     />
       <meta name="viewport" content="width=1024"></meta>
       {showIntro && <Intro closeIntro = {closeIntro}/>}
       <header>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-GP4J3CEVDK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GP4J3CEVDK');
+</script>
         <h1>Movie Awards</h1>
       </header>
       <div className="sidenav">
